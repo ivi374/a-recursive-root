@@ -49,13 +49,14 @@ Based on this complete list, your `.env` file for a complex project like the "AI
 # --- Flask App Settings ---
 FLASK_APP=app.py
 FLASK_ENV=development
-SECRET_KEY=a‑very‑strong‑random‑key‑for‑sessions
+SECRET_KEY=CHANGE_THIS_TO_A_SECURE_RANDOM_STRING
 
 # --- OpenAI API Settings ---
-OPENAI_API_KEY=sk‑YourSecretKeyGoesHere
+OPENAI_API_KEY=your-openai-api-key-here
 
 # --- Database Connection (PostgreSQL) ---
 # These must match the 'environment' section of your db service in docker‑compose.yml
+# IMPORTANT: Never commit real credentials to version control. Keep .env in .gitignore
 DATABASE_URL=postgresql://myuser:mypassword@db:5432/mydatabase
 ```
 
