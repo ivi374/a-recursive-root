@@ -1,0 +1,7 @@
+# Example Agent Role
+
+name: example-role
+description: An example role definition for an agent.
+permissions:
+  - read
+  - write

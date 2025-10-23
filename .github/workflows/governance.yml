@@ -1,0 +1,26 @@
+name: Governance Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate ADR
+        run: |
+          if ! grep -Rq "^# Architecture Decision Record" workspace; then
+            echo "ADR missing in the repository." && exit 1
+          fi
+      - name: Validate Prompts
+        run: |
+          if ! grep -Rq "Prompt Template" ai/prompts; then
+            echo "Prompt cards missing." && exit 1
+          fi
+      - name: Validate Env Mappings
+        run: |
+          if [ ! -f environment/variables/mappings.yml ]; then
+            echo "Environment variable mappings missing." && exit 1
+          fi

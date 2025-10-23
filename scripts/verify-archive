@@ -1,0 +1,24 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[verify-archive] Verifying archive snapshots..."
+
+manifest_file="$Z_ARCHIVE/snapshots/manifest.json"
+checksums_dir="$Z_ARCHIVE/snapshots"
+
+if [ ! -f "$manifest_file" ]; then
+  echo "Manifest file missing: $manifest_file"
+  exit 1
+fi
+
+# Verify checksums for each snapshot listed in the manifest
+jq -r '.snapshots[] | .checksums' "$manifest_file" | while read -r checksum_file; do
+  if [ -f "$checksums_dir/$checksum_file" ]; then
+    (cd "$checksums_dir" && sha256sum -c "$checksum_file") || exit 1
+  else
+    echo "Missing checksum file: $checksums_dir/$checksum_file"
+    exit 1
+  fi
+done
+
+echo "Archive verification complete."

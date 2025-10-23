@@ -1,0 +1,7 @@
+# SPDX Software Bill of Materials
+
+packages:
+  - name: example-package
+    version: 1.0.0
+    license: MIT
+    supplier: example-supplier

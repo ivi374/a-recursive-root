@@ -1,0 +1,15 @@
+# Environment Variable Mappings
+
+# This file maps environment variables to the repositories and services
+# that consume them.  Use this to understand which components depend on
+# which variables.
+
+os-kernel:
+  - Z_ROOT
+  - Z_WORKSPACE
+cli-tools:
+  - Z_ROOT
+  - Z_WORKSPACE
+ui-library:
+  - Z_ROOT
+  - Z_WORKSPACE

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[hydrate] Building development containers and seeding data..."
+# Build devcontainers for each template
+for template in "$Z_CONTAINERS"/languages/* "$Z_CONTAINERS"/services/* "$Z_CONTAINERS"/base; do
+  echo "Building container from $template..."
+  # Placeholder for build command
+done
+echo "Hydrate complete."

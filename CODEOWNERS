@@ -1,0 +1,7 @@
+# Code Owners
+
+*       @maintainer-team
+
+This file defines the default owners for all files in the repository.  Changes to
+any file will request reviews from the listed owners.  You can specify more
+granular ownership by adding paths and GitHub usernames below.

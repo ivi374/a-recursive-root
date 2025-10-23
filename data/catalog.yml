@@ -1,0 +1,8 @@
+# Data Catalog
+
+# List of datasets, their descriptions, licenses and PII flags.
+datasets:
+  - name: sample-dataset
+    description: Example dataset for demonstration purposes
+    license: CC-BY-4.0
+    contains_pii: false

@@ -1,0 +1,12 @@
+# Repository Map
+
+# Maps local repository directories to remote GitHub repositories.  Use
+# this mapping when pushing to or pulling from upstream.
+
+CoreSystems/os-kernel: coresystems-org/os-kernel
+CoreSystems/cli-tools: coresystems-org/cli-tools
+CoreSystems/ui-library: coresystems-org/ui-library
+ResearchLab/experimental-runtime: researchlab-org/experimental-runtime
+ResearchLab/language-models: researchlab-org/language-models
+InfraCommons/build-pipelines: infracommons-org/build-pipelines
+InfraCommons/dev-env-templates: infracommons-org/dev-env-templates

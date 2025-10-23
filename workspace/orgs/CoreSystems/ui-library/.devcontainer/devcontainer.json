@@ -1,0 +1,5 @@
+{
+  "name": "ui-library",
+  "dockerFile": "Dockerfile",
+  "settings": {}
+}

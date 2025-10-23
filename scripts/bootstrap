@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[bootstrap] Installing hooks and generating local .env..."
+# Create a local .env file from the example if it doesn't exist
+if [ ! -f "$Z_ENV/.env" ] && [ -f "$Z_ENV/examples/local.env.example" ]; then
+  cp "$Z_ENV/examples/local.env.example" "$Z_ENV/.env"
+  echo "Created .env from template."
+fi
+
+echo "Bootstrap complete."

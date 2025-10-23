@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+
+* text=auto
+*.sh eol=lf
+*.md text
+*.yml text
+*.yaml text
+*.json text
+*.csv text
+*.bat eol=crlf
+
+# Treat generated archives as binary
+*.zip binary
+*.tar.gz binary

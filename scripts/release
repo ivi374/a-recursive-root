@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[release] Preparing release..."
+# Placeholder for tagging, changelog generation and publishing artifacts
+echo "Release complete."

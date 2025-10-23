@@ -1,0 +1,34 @@
+slots:
+  root: "$Z_ROOT"
+  scripts: "$Z_SCRIPTS"
+  archive: "$Z_ARCHIVE"
+  workspace: "$Z_WORKSPACE"
+  containers: "$Z_CONTAINERS"
+  environment: "$Z_ENV"
+  cloud: "$Z_CLOUD"
+  docs: "$Z_DOCS"
+
+workflows:
+  bootstrap: scripts/bootstrap
+  hydrate: scripts/hydrate
+  build: scripts/build
+  release: scripts/release
+
+guardrails:
+  required_files:
+    - README.md
+    - manifest.yml
+    - environment/variables/catalog.yml
+  license_allowlist:
+    - MIT
+    - Apache-2.0
+  min_test_coverage: 80
+
+provenance:
+  sbom: provenance/sbom.yaml
+  attestors: provenance/slsa-attestation.md
+  checksums: provenance/checksums.txt
+
+ontology:
+  schema: docs/ontology/schema.jsonld
+  glossary: docs/ontology/glossary.csv

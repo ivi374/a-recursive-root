@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "mors": "http://example.com/mors#"
+  },
+  "@type": "mors:Ontology",
+  "@id": "mors:root",
+  "name": "Sample Ontology",
+  "description": "A placeholder ontology for the cartridge."
+}

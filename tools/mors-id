@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+"""
+MORS ID generator CLI
+
+This simple script generates a MORS‑compliant identifier given a
+namespace and entity name.  Usage:
+    ./mors-id <namespace> <entity>
+"""
+import sys
+import uuid
+
+def generate_mors_id(namespace: str, entity: str) -> str:
+    unique = uuid.uuid4().hex[:8]
+    return f"{namespace}:{entity}:{unique}"
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: mors-id <namespace> <entity>")
+        sys.exit(1)
+    ns, ent = sys.argv[1], sys.argv[2]
+    print(generate_mors_id(ns, ent))

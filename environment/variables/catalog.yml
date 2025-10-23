@@ -1,0 +1,11 @@
+# Environment Variable Catalog
+
+Z_ROOT: "Root path of the cartridge."
+Z_CART: "Absolute path to the manifest file."
+Z_SCRIPTS: "Directory containing all automation scripts."
+Z_ARCHIVE: "Directory where immutable snapshots are stored."
+Z_WORKSPACE: "Mutable workspace for active development."
+Z_CONTAINERS: "Directory of devcontainer templates."
+Z_ENV: "Environment configuration directory."
+Z_CLOUD: "Cloud mapping metadata directory."
+Z_DOCS: "Documentation directory."

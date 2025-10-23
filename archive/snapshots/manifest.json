@@ -1,0 +1,12 @@
+{
+  "snapshots": [
+    {
+      "date": "2025-01-01",
+      "files": [
+        "repos-20250101.zip",
+        "environments-20250101.zip"
+      ],
+      "checksums": "SHA256SUMS-20250101"
+    }
+  ]
+}

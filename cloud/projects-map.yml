@@ -1,0 +1,7 @@
+# Projects Map
+
+# Maps local project boards to GitHub Projects.  Update these values
+# to integrate local planning artifacts with their remote counterparts.
+
+core-systems-board: coresystems-org/core-systems-project
+research-roadmap: researchlab-org/research-project

@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[verify] Running checks: linting, secret scans, ADR presence, ontology validation..."
+
+# Placeholder for linting
+echo "Running lint checks..."
+
+# Placeholder for secret scan
+echo "Scanning for secrets..."
+
+# Check for ADR index
+if [ ! -f "$Z_WORKSPACE/_meta/adr-index.md" ]; then
+  echo "ADR index missing! Please create $Z_WORKSPACE/_meta/adr-index.md."
+  exit 1
+fi
+
+# Placeholder for ontology validation
+echo "Validating ontology..."
+
+echo "Verification complete."

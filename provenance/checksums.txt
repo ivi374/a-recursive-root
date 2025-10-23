@@ -1,0 +1,5 @@
+# Checksums
+
+# Format: <checksum>  <path>
+# Use the `scripts/backup` and `scripts/verify` scripts to update and
+# validate these checksums for files in the `archive/snapshots` directory.

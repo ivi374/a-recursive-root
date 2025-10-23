@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "[backup] Creating snapshot of workspace and cloud metadata..."
+timestamp=$(date +%Y%m%d)
+snapshot_dir="$Z_ARCHIVE/snapshots"
+mkdir -p "$snapshot_dir"
+
+# Create tarball of workspace and cloud directories
+workspace_archive="repos-${timestamp}.tar.gz"
+cloud_archive="cloud-${timestamp}.tar.gz"
+tar -czf "$snapshot_dir/$workspace_archive" -C "$Z_WORKSPACE" .
+tar -czf "$snapshot_dir/$cloud_archive" -C "$Z_CLOUD" .
+
+# Generate checksums
+sha256sum "$snapshot_dir/$workspace_archive" "$snapshot_dir/$cloud_archive" > "$snapshot_dir/SHA256SUMS-$timestamp"
+
+echo "Backup complete: $workspace_archive, $cloud_archive"

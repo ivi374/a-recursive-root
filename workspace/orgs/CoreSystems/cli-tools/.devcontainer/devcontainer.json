@@ -1,0 +1,5 @@
+{
+  "name": "cli-tools",
+  "dockerFile": "Dockerfile",
+  "settings": {}
+}

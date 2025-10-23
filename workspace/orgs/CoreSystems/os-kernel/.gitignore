@@ -1,0 +1,8 @@
+# OS Kernel Gitignore
+
+__pycache__/
+*.py[cod]
+.venv/
+.env
+dist/
+node_modules/

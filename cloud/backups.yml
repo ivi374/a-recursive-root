@@ -1,0 +1,13 @@
+# Backup Configuration
+
+cadence: weekly
+retention:
+  count: 5
+  unit: weeks
+integrity_checks:
+  algorithm: sha256
+  generate_manifests: true
+
+paths:
+  - archive/snapshots
+  - workspace
