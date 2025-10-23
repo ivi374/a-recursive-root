@@ -1,0 +1,11 @@
+# Python dependencies for AI command-line interfaces
+# Install with: pip install -r requirements.txt
+
+# OpenAI CLI and API client
+openai>=1.0.0
+
+# Anthropic Claude API client
+anthropic>=0.3.0
+
+# Additional helpful AI/ML tools
+# GitHub Copilot CLI is installed separately via npm (see install_ai_clis.sh)
