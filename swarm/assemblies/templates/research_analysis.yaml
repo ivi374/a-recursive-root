@@ -1,0 +1,124 @@
+# Research & Analysis Assembly
+# Assembly for conducting research and generating insights
+
+name: "research_analysis"
+version: "1.0.0"
+description: "Comprehensive research and analysis workflow"
+
+roles:
+  - name: "researcher"
+    capabilities:
+      - research
+      - analysis
+      - literature_review
+    responsibilities:
+      - "Conduct literature review"
+      - "Collect relevant data"
+      - "Identify key findings"
+    dependencies: []
+
+  - name: "data_analyst"
+    capabilities:
+      - data_analysis
+      - statistics
+      - visualization
+    responsibilities:
+      - "Analyze datasets"
+      - "Create visualizations"
+      - "Generate insights"
+    dependencies:
+      - researcher
+
+  - name: "technical_writer"
+    capabilities:
+      - documentation
+      - writing
+      - scientific_writing
+    responsibilities:
+      - "Write research report"
+      - "Document methodology"
+      - "Present findings"
+    dependencies:
+      - data_analyst
+
+workflow:
+  parallel_execution: false
+  error_handling: "continue"
+
+  steps:
+    - role: "researcher"
+      action: "literature_review"
+      inputs:
+        - "research_topic"
+        - "scope_definition"
+      outputs:
+        - "literature_summary"
+        - "key_references"
+        - "research_gaps"
+      timeout: "4h"
+
+    - role: "researcher"
+      action: "data_collection"
+      inputs:
+        - "literature_summary"
+        - "research_questions"
+      outputs:
+        - "raw_data"
+        - "data_sources"
+        - "collection_metadata"
+      timeout: "6h"
+
+    - role: "data_analyst"
+      action: "data_analysis"
+      inputs:
+        - "raw_data"
+        - "research_questions"
+      outputs:
+        - "analyzed_data"
+        - "statistical_results"
+        - "data_visualizations"
+      timeout: "8h"
+
+    - role: "data_analyst"
+      action: "insight_generation"
+      inputs:
+        - "analyzed_data"
+        - "statistical_results"
+      outputs:
+        - "key_insights"
+        - "recommendations"
+        - "future_research"
+      timeout: "4h"
+
+    - role: "technical_writer"
+      action: "write_report"
+      inputs:
+        - "literature_summary"
+        - "analyzed_data"
+        - "key_insights"
+        - "data_visualizations"
+      outputs:
+        - "research_report"
+        - "executive_summary"
+        - "methodology_documentation"
+      timeout: "6h"
+
+success_criteria:
+  required_outputs:
+    - "research_report"
+    - "key_insights"
+    - "data_visualizations"
+  quality_threshold: 0.80
+  timeout: "32h"
+  validation_rules:
+    - "methodology_documented"
+    - "findings_supported_by_data"
+    - "report_complete"
+
+metadata:
+  tags:
+    - "research"
+    - "analysis"
+    - "data_science"
+  priority: "medium"
+  estimated_duration: "24-32h"

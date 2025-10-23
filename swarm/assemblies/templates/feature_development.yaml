@@ -1,0 +1,136 @@
+# Feature Development Assembly
+# Standard assembly for implementing new features
+
+name: "feature_development"
+version: "1.0.0"
+description: "End-to-end feature development from design to deployment"
+
+roles:
+  - name: "architect"
+    capabilities:
+      - architecture
+      - design
+      - documentation
+    responsibilities:
+      - "Design feature architecture"
+      - "Define interfaces and APIs"
+      - "Document technical approach"
+    dependencies: []
+
+  - name: "developer"
+    capabilities:
+      - coding
+      - development
+      - testing
+    responsibilities:
+      - "Implement feature code"
+      - "Write unit tests"
+      - "Integrate with existing system"
+    dependencies:
+      - architect
+
+  - name: "qa_engineer"
+    capabilities:
+      - testing
+      - qa
+      - automation
+    responsibilities:
+      - "Create test plan"
+      - "Write integration tests"
+      - "Execute test suite"
+      - "Report bugs"
+    dependencies:
+      - developer
+
+  - name: "technical_writer"
+    capabilities:
+      - documentation
+      - writing
+      - technical_writing
+    responsibilities:
+      - "Write feature documentation"
+      - "Create user guides"
+      - "Document APIs"
+    dependencies:
+      - developer
+
+workflow:
+  parallel_execution: false
+  error_handling: "stop"
+
+  steps:
+    - role: "architect"
+      action: "design_feature"
+      inputs:
+        - "feature_requirements"
+        - "existing_architecture"
+      outputs:
+        - "feature_design"
+        - "api_specifications"
+        - "architecture_diagrams"
+      timeout: "2h"
+
+    - role: "developer"
+      action: "implement_feature"
+      inputs:
+        - "feature_design"
+        - "api_specifications"
+      outputs:
+        - "feature_code"
+        - "unit_tests"
+        - "integration_points"
+      timeout: "8h"
+
+    - role: "qa_engineer"
+      action: "test_feature"
+      inputs:
+        - "feature_code"
+        - "feature_design"
+      outputs:
+        - "test_plan"
+        - "test_results"
+        - "bug_reports"
+      timeout: "4h"
+
+    - role: "developer"
+      action: "fix_bugs"
+      inputs:
+        - "bug_reports"
+      outputs:
+        - "bug_fixes"
+        - "updated_tests"
+      timeout: "4h"
+      condition: "has_bugs"
+
+    - role: "technical_writer"
+      action: "document_feature"
+      inputs:
+        - "feature_code"
+        - "feature_design"
+        - "api_specifications"
+      outputs:
+        - "feature_documentation"
+        - "user_guide"
+        - "api_docs"
+      timeout: "2h"
+
+success_criteria:
+  required_outputs:
+    - "feature_code"
+    - "unit_tests"
+    - "test_results"
+    - "feature_documentation"
+  quality_threshold: 0.85
+  timeout: "24h"
+  validation_rules:
+    - "all_tests_passing"
+    - "code_review_approved"
+    - "documentation_complete"
+
+metadata:
+  tags:
+    - "development"
+    - "feature"
+    - "full_cycle"
+  priority: "high"
+  estimated_duration: "16-24h"
