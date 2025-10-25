@@ -15,7 +15,8 @@ The `/workspace` directory is the primary location for:
 ```
 workspace/
 ├── projects/              # Main project directories
-│   └── ai-council-system/ # AI Council System project
+│   ├── core-systems-board/    # Core systems board project
+│   └── research-roadmap/      # Research roadmap project
 └── experiments/           # Experimental code (if any)
 ```
 
@@ -38,17 +39,19 @@ workspace/
 
 ## Current Projects
 
-### AI Council System
+### Core Systems Board
 
-Located in `/workspace/projects/ai-council-system/`
+Located in `/workspace/projects/core-systems-board/`
 
-A decentralized 24/7 live streaming platform where AI agents debate real-time events.
+A project focused on core system components and infrastructure.
 
-**Key Components:**
-- Core system (agents, council, events, RNG)
-- Blockchain integration
-- Streaming infrastructure
-- Web interface
+**Documentation:** See project-specific README in the directory
+
+### Research Roadmap
+
+Located in `/workspace/projects/research-roadmap/`
+
+A project for tracking and managing research initiatives.
 
 **Documentation:** See project-specific README in the directory
 
