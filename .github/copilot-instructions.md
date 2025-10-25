@@ -57,8 +57,8 @@ The repository follows the Z Cartridge organizational pattern:
 ### Testing
 
 - Test coverage minimum: 80% (per `manifest.yml` guardrails)
-- Run tests before committing: Check CI workflow in `.github/workflows/main.yml`
-- No dedicated test framework is currently set up - follow existing patterns when adding tests
+- CI workflow includes placeholder for tests (`npm test` in `.github/workflows/main.yml`)
+- Test framework is not fully implemented yet - follow existing patterns when adding tests
 
 ### Build Process
 
@@ -66,7 +66,11 @@ Use the scripts in `scripts/` directory:
 - `bootstrap` - Initialize the environment
 - `hydrate` - Load dependencies and configurations
 - `build` - Build the project
-- `verify` - Run verification checks
+- `release` - Release the project
+
+Additional scripts available:
+- `verify` - Run verification checks (not in manifest workflows)
+- `verify-archive` - Verify archive integrity
 
 ## Key Technologies
 
@@ -172,7 +176,7 @@ When assisting with this repository:
 ## Questions or Clarifications
 
 For questions about:
-- **Z Cartridge**: See `docs/overview.md` and related cartridge documentation
+- **Z Cartridge**: See `docs/` directory for cartridge documentation
 - **Architecture**: Check `docs/architecture/` and workspace ADRs
 - **Governance**: Review `governance/policies/` and `governance/standards/`
 - **Build System**: See `manifest.yml` and `scripts/` directory
