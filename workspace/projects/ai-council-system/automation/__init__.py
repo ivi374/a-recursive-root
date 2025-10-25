@@ -2,11 +2,12 @@
 Automation & Scale System
 
 Provides 24/7 automated operation for AI Council debates with
-multi-platform streaming, health monitoring, and analytics.
+multi-platform streaming, health monitoring, analytics, and complete
+orchestration for production deployment.
 
 Author: AI Council System
-Phase: 5.1 - Automation & Scale
-Version: 1.0.0
+Phase: 5 - Automation & Scale COMPLETE
+Version: 2.0.0
 """
 
 # Scheduler
@@ -57,6 +58,15 @@ from .analytics import (
     AnalyticsDashboard
 )
 
+# Orchestrator
+from .orchestrator import (
+    OrchestratorMode,
+    SystemState,
+    OrchestratorConfig,
+    OrchestratorStats,
+    AutomationOrchestrator
+)
+
 __all__ = [
     # Scheduler
     "ScheduleType",
@@ -97,6 +107,13 @@ __all__ = [
     "StreamingMetrics",
     "SystemMetrics",
     "AnalyticsDashboard",
+
+    # Orchestrator
+    "OrchestratorMode",
+    "SystemState",
+    "OrchestratorConfig",
+    "OrchestratorStats",
+    "AutomationOrchestrator",
 ]
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
