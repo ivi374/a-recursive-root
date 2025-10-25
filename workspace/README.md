@@ -14,10 +14,9 @@ The `/workspace` directory is the primary location for:
 
 ```
 workspace/
-├── projects/              # Main project directories
-│   ├── core-systems-board/    # Core systems board project
-│   └── research-roadmap/      # Research roadmap project
-└── experiments/           # Experimental code (if any)
+└── projects/                  # Main project directories
+    ├── core-systems-board/    # Core systems board project
+    └── research-roadmap/      # Research roadmap project
 ```
 
 ## Working in Workspace
@@ -45,7 +44,10 @@ Located in `/workspace/projects/core-systems-board/`
 
 A project focused on core system components and infrastructure.
 
-**Documentation:** See project-specific README in the directory
+**Key Files:**
+- `roadmap.md` - Project roadmap and planning
+- `backlog.csv` - Feature backlog
+- `corpus/` - Project documentation and resources
 
 ### Research Roadmap
 
@@ -53,7 +55,10 @@ Located in `/workspace/projects/research-roadmap/`
 
 A project for tracking and managing research initiatives.
 
-**Documentation:** See project-specific README in the directory
+**Key Files:**
+- `roadmap.md` - Research roadmap and timeline
+- `backlog.csv` - Research backlog
+- `corpus/` - Research materials and resources
 
 ## Environment Setup
 
