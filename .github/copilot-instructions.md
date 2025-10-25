@@ -57,7 +57,8 @@ The repository follows the Z Cartridge organizational pattern:
 ### Testing
 
 - Test coverage minimum: 80% (per `manifest.yml` guardrails)
-- CI workflow includes placeholder for tests (`npm test` in `.github/workflows/main.yml`)
+- CI workflow includes placeholder for tests (`npm test || true` in `.github/workflows/main.yml`)
+  - Note: `|| true` allows CI to pass even when tests fail, indicating testing is not fully implemented
 - Test framework is not fully implemented yet - follow existing patterns when adding tests
 
 ### Build Process
@@ -69,7 +70,7 @@ Use the scripts in `scripts/` directory:
 - `release` - Release the project
 
 Additional scripts available:
-- `verify` - Run verification checks (not in manifest workflows)
+- `verify` - Run verification checks (utility script, not part of core manifest workflows)
 - `verify-archive` - Verify archive integrity
 
 ## Key Technologies
