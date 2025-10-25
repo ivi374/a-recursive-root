@@ -52,6 +52,12 @@ flake8>=7.0.0
 mypy>=1.8.0
 ipython>=8.20.0
 
-# Optional: Blockchain
-web3>=6.15.0  # Ethereum
-solana>=0.30.0  # Solana
+# Blockchain (Phase 3)
+web3>=6.15.0  # Ethereum/Web3
+eth-account>=0.10.0  # Ethereum accounts
+eth-utils>=2.3.0  # Ethereum utilities
+solana>=0.30.0  # Solana Python client
+anchorpy>=0.15.0  # Anchor framework Python bindings
+solders>=0.18.0  # Solana SDK
+base58>=2.1.1  # Base58 encoding
+pynacl>=1.5.0  # Libsodium/NaCl crypto
