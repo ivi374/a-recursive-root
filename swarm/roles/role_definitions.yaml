@@ -1,0 +1,517 @@
+# Swarm Role Definitions
+# Defines available roles for AI agents in the swarm system
+
+version: "1.0.0"
+last_updated: "2025-10-23"
+
+roles:
+  # Development Roles
+  architect:
+    name: "System Architect"
+    description: "Designs system architecture and technical solutions"
+    capabilities:
+      - architecture
+      - design
+      - systems_thinking
+      - documentation
+      - technical_writing
+    responsibilities:
+      - "Design overall system architecture"
+      - "Define component interactions"
+      - "Create architectural diagrams"
+      - "Write architecture documentation"
+      - "Review technical decisions"
+    dependencies: []
+    skills_required:
+      - "System design"
+      - "Architecture patterns"
+      - "Scalability planning"
+      - "Documentation"
+    output_artifacts:
+      - "Architecture diagrams"
+      - "Design documents"
+      - "Technical specifications"
+
+  developer:
+    name: "Software Developer"
+    description: "Implements features and writes production code"
+    capabilities:
+      - coding
+      - development
+      - debugging
+      - testing
+      - code_review
+    responsibilities:
+      - "Implement features according to specifications"
+      - "Write clean, maintainable code"
+      - "Debug and fix issues"
+      - "Write unit tests"
+      - "Participate in code reviews"
+    dependencies: []
+    skills_required:
+      - "Programming languages (Python, TypeScript, Solidity)"
+      - "Version control (Git)"
+      - "Testing frameworks"
+      - "Debugging"
+    output_artifacts:
+      - "Source code"
+      - "Unit tests"
+      - "Documentation"
+
+  frontend_developer:
+    name: "Frontend Developer"
+    description: "Builds user interfaces and client-side applications"
+    capabilities:
+      - frontend
+      - ui_development
+      - react
+      - typescript
+      - css
+    responsibilities:
+      - "Build responsive user interfaces"
+      - "Implement frontend features"
+      - "Optimize user experience"
+      - "Write frontend tests"
+      - "Ensure accessibility"
+    dependencies:
+      - developer
+    skills_required:
+      - "React/Next.js"
+      - "TypeScript"
+      - "CSS/TailwindCSS"
+      - "Web APIs"
+    output_artifacts:
+      - "UI components"
+      - "Frontend code"
+      - "Style definitions"
+
+  backend_developer:
+    name: "Backend Developer"
+    description: "Builds server-side logic and APIs"
+    capabilities:
+      - backend
+      - api_development
+      - database
+      - python
+      - nodejs
+    responsibilities:
+      - "Develop API endpoints"
+      - "Implement business logic"
+      - "Design database schemas"
+      - "Optimize performance"
+      - "Handle security"
+    dependencies:
+      - developer
+    skills_required:
+      - "Python/Node.js"
+      - "API design (REST, GraphQL, WebSocket)"
+      - "Database design"
+      - "Security best practices"
+    output_artifacts:
+      - "API endpoints"
+      - "Database schemas"
+      - "Server-side code"
+
+  blockchain_developer:
+    name: "Blockchain Developer"
+    description: "Develops smart contracts and blockchain integrations"
+    capabilities:
+      - blockchain
+      - solidity
+      - web3
+      - smart_contracts
+      - cryptography
+    responsibilities:
+      - "Write smart contracts"
+      - "Implement blockchain integrations"
+      - "Ensure contract security"
+      - "Deploy contracts"
+      - "Integrate with web3 libraries"
+    dependencies:
+      - developer
+    skills_required:
+      - "Solidity"
+      - "Ethereum/Solana"
+      - "Web3.js/Ethers.js"
+      - "Smart contract security"
+    output_artifacts:
+      - "Smart contracts"
+      - "Deployment scripts"
+      - "Integration code"
+
+  # Quality Assurance Roles
+  qa_engineer:
+    name: "QA Engineer"
+    description: "Tests software and ensures quality"
+    capabilities:
+      - testing
+      - qa
+      - automation
+      - test_planning
+      - debugging
+    responsibilities:
+      - "Design test plans"
+      - "Write automated tests"
+      - "Execute test suites"
+      - "Report bugs"
+      - "Verify fixes"
+    dependencies: []
+    skills_required:
+      - "Testing frameworks (Jest, Pytest)"
+      - "Test automation"
+      - "Bug tracking"
+      - "QA methodologies"
+    output_artifacts:
+      - "Test plans"
+      - "Test cases"
+      - "Bug reports"
+      - "Test coverage reports"
+
+  security_auditor:
+    name: "Security Auditor"
+    description: "Audits code and systems for security vulnerabilities"
+    capabilities:
+      - security
+      - auditing
+      - penetration_testing
+      - cryptography
+      - compliance
+    responsibilities:
+      - "Perform security audits"
+      - "Identify vulnerabilities"
+      - "Recommend security improvements"
+      - "Review smart contracts"
+      - "Ensure compliance"
+    dependencies: []
+    skills_required:
+      - "Security best practices"
+      - "Vulnerability assessment"
+      - "Smart contract auditing"
+      - "Compliance standards"
+    output_artifacts:
+      - "Security audit reports"
+      - "Vulnerability assessments"
+      - "Remediation recommendations"
+
+  # Research & Analysis Roles
+  researcher:
+    name: "Research Scientist"
+    description: "Conducts research and analysis"
+    capabilities:
+      - research
+      - analysis
+      - data_analysis
+      - literature_review
+      - scientific_writing
+    responsibilities:
+      - "Conduct literature reviews"
+      - "Analyze data and trends"
+      - "Design experiments"
+      - "Write research reports"
+      - "Synthesize findings"
+    dependencies: []
+    skills_required:
+      - "Research methodologies"
+      - "Data analysis"
+      - "Statistical methods"
+      - "Scientific writing"
+    output_artifacts:
+      - "Research reports"
+      - "Analysis documents"
+      - "Data visualizations"
+
+  data_analyst:
+    name: "Data Analyst"
+    description: "Analyzes data and generates insights"
+    capabilities:
+      - data_analysis
+      - statistics
+      - visualization
+      - sql
+      - python
+    responsibilities:
+      - "Analyze datasets"
+      - "Create visualizations"
+      - "Generate reports"
+      - "Identify trends"
+      - "Provide recommendations"
+    dependencies: []
+    skills_required:
+      - "Data analysis tools"
+      - "Statistical methods"
+      - "Visualization libraries"
+      - "SQL"
+    output_artifacts:
+      - "Analysis reports"
+      - "Visualizations"
+      - "Dashboards"
+
+  # Documentation & Communication Roles
+  technical_writer:
+    name: "Technical Writer"
+    description: "Creates documentation and technical content"
+    capabilities:
+      - documentation
+      - writing
+      - technical_writing
+      - editing
+      - markdown
+    responsibilities:
+      - "Write technical documentation"
+      - "Create user guides"
+      - "Document APIs"
+      - "Write tutorials"
+      - "Maintain documentation"
+    dependencies: []
+    skills_required:
+      - "Technical writing"
+      - "Documentation tools"
+      - "Markdown"
+      - "API documentation"
+    output_artifacts:
+      - "Documentation"
+      - "User guides"
+      - "API docs"
+      - "Tutorials"
+
+  content_creator:
+    name: "Content Creator"
+    description: "Creates marketing and educational content"
+    capabilities:
+      - content_creation
+      - writing
+      - marketing
+      - social_media
+      - storytelling
+    responsibilities:
+      - "Create marketing content"
+      - "Write blog posts"
+      - "Manage social media"
+      - "Develop educational materials"
+      - "Craft narratives"
+    dependencies: []
+    skills_required:
+      - "Content writing"
+      - "Marketing"
+      - "Social media management"
+      - "Storytelling"
+    output_artifacts:
+      - "Blog posts"
+      - "Social media content"
+      - "Marketing materials"
+
+  # Project Management Roles
+  project_manager:
+    name: "Project Manager"
+    description: "Manages project execution and coordination"
+    capabilities:
+      - project_management
+      - planning
+      - coordination
+      - communication
+      - risk_management
+    responsibilities:
+      - "Plan project timelines"
+      - "Coordinate team activities"
+      - "Track progress"
+      - "Manage risks"
+      - "Facilitate communication"
+    dependencies: []
+    skills_required:
+      - "Project management"
+      - "Agile methodologies"
+      - "Risk management"
+      - "Communication"
+    output_artifacts:
+      - "Project plans"
+      - "Status reports"
+      - "Risk registers"
+
+  product_owner:
+    name: "Product Owner"
+    description: "Defines product vision and requirements"
+    capabilities:
+      - product_management
+      - requirements
+      - prioritization
+      - stakeholder_management
+      - user_research
+    responsibilities:
+      - "Define product requirements"
+      - "Prioritize features"
+      - "Manage stakeholders"
+      - "Validate solutions"
+      - "Make product decisions"
+    dependencies: []
+    skills_required:
+      - "Product management"
+      - "User research"
+      - "Prioritization"
+      - "Business analysis"
+    output_artifacts:
+      - "Product requirements"
+      - "User stories"
+      - "Feature specifications"
+
+  # AI Council Specific Roles
+  council_moderator:
+    name: "Council Moderator"
+    description: "Moderates AI council debates"
+    capabilities:
+      - moderation
+      - facilitation
+      - conflict_resolution
+      - decision_making
+      - communication
+    responsibilities:
+      - "Moderate debate sessions"
+      - "Ensure fair participation"
+      - "Resolve conflicts"
+      - "Facilitate voting"
+      - "Summarize outcomes"
+    dependencies: []
+    skills_required:
+      - "Debate moderation"
+      - "Conflict resolution"
+      - "Decision facilitation"
+      - "Communication"
+    output_artifacts:
+      - "Debate summaries"
+      - "Vote tallies"
+      - "Moderation reports"
+
+  debate_agent:
+    name: "Debate Agent"
+    description: "Participates in council debates"
+    capabilities:
+      - argumentation
+      - reasoning
+      - persuasion
+      - analysis
+      - rhetoric
+    responsibilities:
+      - "Present arguments"
+      - "Respond to counterarguments"
+      - "Analyze positions"
+      - "Vote on outcomes"
+      - "Contribute to discussions"
+    dependencies: []
+    skills_required:
+      - "Logical reasoning"
+      - "Argumentation"
+      - "Critical thinking"
+      - "Rhetoric"
+    output_artifacts:
+      - "Arguments"
+      - "Responses"
+      - "Votes"
+
+  event_curator:
+    name: "Event Curator"
+    description: "Curates and selects events for debate"
+    capabilities:
+      - curation
+      - event_selection
+      - analysis
+      - prioritization
+      - trending_analysis
+    responsibilities:
+      - "Monitor event sources"
+      - "Select relevant events"
+      - "Rank event importance"
+      - "Extract debate topics"
+      - "Maintain event queue"
+    dependencies: []
+    skills_required:
+      - "Content curation"
+      - "Trend analysis"
+      - "Prioritization"
+      - "NLP/text analysis"
+    output_artifacts:
+      - "Event selections"
+      - "Topic extractions"
+      - "Priority rankings"
+
+  stream_composer:
+    name: "Stream Composer"
+    description: "Composes and manages live streams"
+    capabilities:
+      - streaming
+      - audio_video
+      - composition
+      - broadcasting
+      - obs_management
+    responsibilities:
+      - "Compose stream layouts"
+      - "Manage audio/video feeds"
+      - "Control OBS scenes"
+      - "Ensure stream quality"
+      - "Handle technical issues"
+    dependencies: []
+    skills_required:
+      - "OBS Studio"
+      - "Stream management"
+      - "Audio/video composition"
+      - "Broadcasting"
+    output_artifacts:
+      - "Stream compositions"
+      - "Scene configurations"
+      - "Quality reports"
+
+  token_economist:
+    name: "Token Economist"
+    description: "Designs and manages token economics"
+    capabilities:
+      - economics
+      - tokenomics
+      - game_theory
+      - modeling
+      - analysis
+    responsibilities:
+      - "Design token mechanics"
+      - "Model economic systems"
+      - "Analyze market dynamics"
+      - "Adjust parameters"
+      - "Ensure sustainability"
+    dependencies: []
+    skills_required:
+      - "Economics"
+      - "Game theory"
+      - "Mathematical modeling"
+      - "Cryptocurrency markets"
+    output_artifacts:
+      - "Economic models"
+      - "Token designs"
+      - "Parameter recommendations"
+
+# Role Categories for easier organization
+categories:
+  development:
+    - architect
+    - developer
+    - frontend_developer
+    - backend_developer
+    - blockchain_developer
+
+  quality_assurance:
+    - qa_engineer
+    - security_auditor
+
+  research:
+    - researcher
+    - data_analyst
+
+  documentation:
+    - technical_writer
+    - content_creator
+
+  management:
+    - project_manager
+    - product_owner
+
+  ai_council:
+    - council_moderator
+    - debate_agent
+    - event_curator
+    - stream_composer
+    - token_economist

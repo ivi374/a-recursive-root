@@ -1,0 +1,198 @@
+# Council Debate Assembly
+# Assembly for orchestrating AI council debates
+
+name: "council_debate"
+version: "1.0.0"
+description: "Orchestrate an AI council debate session"
+
+roles:
+  - name: "event_curator"
+    capabilities:
+      - curation
+      - event_selection
+      - analysis
+    responsibilities:
+      - "Select debate topic"
+      - "Gather context information"
+      - "Define debate parameters"
+    dependencies: []
+
+  - name: "council_moderator"
+    capabilities:
+      - moderation
+      - facilitation
+      - decision_making
+    responsibilities:
+      - "Moderate debate session"
+      - "Enforce debate rules"
+      - "Facilitate voting"
+      - "Summarize outcomes"
+    dependencies:
+      - event_curator
+
+  - name: "debate_agent"
+    capabilities:
+      - argumentation
+      - reasoning
+      - persuasion
+    responsibilities:
+      - "Present arguments"
+      - "Respond to counterarguments"
+      - "Vote on outcome"
+    dependencies:
+      - event_curator
+    count: 5  # Multiple debate agents
+
+  - name: "stream_composer"
+    capabilities:
+      - streaming
+      - audio_video
+      - broadcasting
+    responsibilities:
+      - "Compose debate stream"
+      - "Generate audio/video"
+      - "Broadcast to platforms"
+    dependencies:
+      - council_moderator
+
+workflow:
+  parallel_execution: true
+  error_handling: "retry"
+
+  steps:
+    - role: "event_curator"
+      action: "select_topic"
+      inputs:
+        - "event_queue"
+        - "trending_events"
+      outputs:
+        - "debate_topic"
+        - "context_information"
+        - "key_perspectives"
+      timeout: "5m"
+
+    - role: "council_moderator"
+      action: "initialize_debate"
+      inputs:
+        - "debate_topic"
+        - "context_information"
+        - "debate_agents"
+      outputs:
+        - "debate_session"
+        - "agent_assignments"
+        - "debate_rules"
+      timeout: "2m"
+
+    - role: "stream_composer"
+      action: "start_stream"
+      inputs:
+        - "debate_session"
+      outputs:
+        - "stream_handle"
+        - "stream_url"
+      timeout: "1m"
+      parallel: true
+
+    - role: "council_moderator"
+      action: "opening_statements"
+      inputs:
+        - "debate_session"
+        - "agent_assignments"
+      outputs:
+        - "opening_statements"
+      timeout: "10m"
+
+    - role: "debate_agent"
+      action: "present_argument"
+      inputs:
+        - "debate_topic"
+        - "assigned_perspective"
+        - "context_information"
+      outputs:
+        - "argument"
+        - "supporting_evidence"
+      timeout: "3m"
+      iterations: 3  # Multiple rounds
+
+    - role: "council_moderator"
+      action: "facilitate_discussion"
+      inputs:
+        - "arguments"
+      outputs:
+        - "discussion_points"
+        - "counterarguments"
+      timeout: "15m"
+
+    - role: "debate_agent"
+      action: "respond"
+      inputs:
+        - "discussion_points"
+        - "counterarguments"
+      outputs:
+        - "responses"
+      timeout: "3m"
+      iterations: 2
+
+    - role: "council_moderator"
+      action: "call_vote"
+      inputs:
+        - "debate_session"
+        - "all_arguments"
+      outputs:
+        - "voting_options"
+      timeout: "2m"
+
+    - role: "debate_agent"
+      action: "cast_vote"
+      inputs:
+        - "voting_options"
+        - "debate_context"
+      outputs:
+        - "vote"
+        - "vote_reasoning"
+      timeout: "2m"
+
+    - role: "council_moderator"
+      action: "tally_and_conclude"
+      inputs:
+        - "votes"
+        - "debate_session"
+      outputs:
+        - "vote_results"
+        - "debate_outcome"
+        - "debate_summary"
+      timeout: "5m"
+
+    - role: "stream_composer"
+      action: "conclude_stream"
+      inputs:
+        - "debate_outcome"
+        - "debate_summary"
+      outputs:
+        - "stream_recording"
+        - "stream_metrics"
+      timeout: "2m"
+
+success_criteria:
+  required_outputs:
+    - "debate_outcome"
+    - "vote_results"
+    - "debate_summary"
+    - "stream_recording"
+  quality_threshold: 0.90
+  timeout: "1h"
+  validation_rules:
+    - "all_agents_participated"
+    - "votes_cast"
+    - "stream_completed"
+    - "outcome_determined"
+
+metadata:
+  tags:
+    - "council"
+    - "debate"
+    - "live_stream"
+  priority: "critical"
+  estimated_duration: "30-60m"
+  recurring: true
+  schedule: "continuous"
