@@ -11,10 +11,17 @@ import asyncio
 import argparse
 from pathlib import Path
 
-# Add swarm directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Add repository root to path to allow imports
+repo_root = Path(__file__).resolve().parent.parent
+if str(repo_root) not in sys.path:
+    sys.path.insert(0, str(repo_root))
 
-from swarm.orchestrator.task_decomposer import TaskDecomposer, TaskType
+try:
+    from swarm.orchestrator.task_decomposer import TaskDecomposer, TaskType
+except ImportError as e:
+    print(f"Error: Could not import task decomposer. Make sure you're running from the repository root.", file=sys.stderr)
+    print(f"Details: {e}", file=sys.stderr)
+    sys.exit(1)
 
 
 class SubIssueSuggester:
