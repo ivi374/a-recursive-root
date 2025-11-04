@@ -116,32 +116,82 @@ A decentralized 24/7 live streaming platform where AI agents form organizational
 
 ## 🏗️ Architecture Overview
 
+The AI Council System is designed as a modular, scalable "operating system" for decentralized AI collaboration. The core components are organized as follows:
+
 ```
 ai-council-system/
-├── core/                    # Core system components
-│   ├── agents/             # AI agent implementations
-│   ├── council/            # Council formation & management
-│   ├── events/             # Real-time event ingestion
-│   └── rng/                # Random number generation
-├── blockchain/             # Blockchain integration
-│   ├── contracts/          # Smart contracts
-│   ├── rng/                # On-chain RNG (Chainlink VRF, Pyth)
-│   └── token/              # Token mechanics
-├── streaming/              # Live streaming components
-│   ├── visuals/            # Generative visuals
-│   ├── audio/              # Audio synthesis
-│   └── broadcast/          # Stream management
-├── web/                    # Website & frontend
-│   ├── frontend/           # React/Next.js app
-│   ├── backend/            # API server
-│   └── api/                # External API integrations
 ├── swarm/                  # Swarm orchestration system
-│   ├── assemblies/         # Assembly definitions
-│   ├── orchestrator/       # Swarm coordinator
-│   └── roles/              # Role specifications
-├── governance/             # Governance frameworks
-├── tests/                  # Testing suite
-└── docs/                   # Documentation
+│   ├── orchestrator/       # Core orchestration logic
+│   ├── roles/              # Role definitions and management
+│   └── assemblies/         # Assembly definitions
+├── ...                     # Other top-level directories for different system functions
+```
+
+For a detailed breakdown of the entire repository structure, please refer to the documentation in the `/docs` directory.
+
+### Swarm Orchestration System
+
+The `swarm` directory contains the core logic for the AI agent orchestration system. This system is responsible for coordinating multiple AI agents to perform complex tasks. It is built on three key concepts:
+
+*   **Roles**: Define the responsibilities and capabilities of agents.
+*   **Assemblies**: Define the workflows and success criteria for tasks.
+*   **Orchestrator**: Manages the execution of assemblies, including agent assignment and result aggregation.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+*   Python 3.9+
+*   pip
+*   virtualenv (recommended)
+
+### Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/ai-council-system.git
+    cd ai-council-system
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Usage
+
+The primary entry point for interacting with the swarm orchestration system is the `SwarmCoordinator` class, located in `swarm/orchestrator/coordinator.py`.
+
+**Basic Example:**
+
+```python
+from swarm.orchestrator.coordinator import SwarmCoordinator, Agent
+from swarm.assemblies.assembly_loader import get_assembly
+
+# Initialize the coordinator
+coordinator = SwarmCoordinator()
+
+# Register an agent
+agent = Agent(
+    agent_id="007",
+    name="James Bond",
+    capabilities=["espionage", "seduction", "mixology"]
+)
+coordinator.register_agent(agent)
+
+# Load an assembly
+assembly = get_assembly("example_mission")
+
+# Execute the assembly
+if assembly:
+    result = coordinator.execute_assembly(assembly, {"mission_briefing": "Infiltrate the secret lair."})
+    print(result)
 ```
 
 ## 🚀 Development Phases
@@ -251,8 +301,8 @@ TBD - Pending legal review
 
 ---
 
-**Last Updated**: October 23, 2025
-**Version**: 0.1.0-alpha
+**Last Updated**: October 24, 2025
+**Version**: 0.1.1-alpha
 
 ## 📚 Z Cartridge Foundation
 
