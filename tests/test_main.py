@@ -6,19 +6,22 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from core.agents.base_agent import AgentPersonality
+from core.agents.base_agent import AgentPersonality, BaseAgent
 from core.council.council import DebateFormat, DebateRound, DebateSession, VotingResult
 from core.events.event_ingestion import Event, EventCategory, EventSource
 
 import main
 
 
-class _FakeAgent:
+class _FakeAgent(BaseAgent):
     def __init__(self, name: str, personality: AgentPersonality):
         self.name = name
         self.personality = personality
         self.debate_wins = 0
         self.total_contributions = 0
+
+    async def generate_response(self, prompt: str, context: dict | None = None) -> str:
+        return "fake response"
 
 
 def _build_event():
