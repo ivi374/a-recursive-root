@@ -6,8 +6,8 @@ pyyaml>=6.0.3
 python-dateutil>=2.9.0.post0
 
 # LLM Providers
-anthropic>=0.122.0
-openai>=3.1.0
+anthropic>=1.0.0
+openai>=3.3.1
 
 # Event Sources
 tweepy>=4.17.0  # Twitter API
@@ -22,7 +22,7 @@ gTTS>=2.5.4  # Google TTS fallback
 
 # Web Framework
 fastapi>=0.141.1
-uvicorn[standard]>=0.52.3
+uvicorn[standard]>=0.52.4
 websockets>=17.0.1
 python-multipart>=0.0.32
 
@@ -54,7 +54,7 @@ ipython>=9.16.1
 
 # Blockchain (Phase 3)
 web3>=7.16.0  # Ethereum/Web3
-eth-account>=0.13.7  # Ethereum accounts
+eth-account>=0.14.0  # Ethereum accounts
 eth-utils>=6.0.0  # Ethereum utilities
 solana>=0.40.2  # Solana Python client
 anchorpy>=0.21.0  # Anchor framework Python bindings
@@ -64,6 +64,6 @@ pynacl>=1.6.2  # Libsodium/NaCl crypto
 
 # Avatar Generation (Phase 4.1)
 replicate>=1.0.7  # Replicate API for Stable Diffusion
-# openai>=3.1.0  # Already included above for DALL-E 3
+# openai>=3.3.1  # Already included above for DALL-E 3
 # Pillow>=12.3.0  # Already included above for image processing
 # numpy>=2.5.2  # Already included above
